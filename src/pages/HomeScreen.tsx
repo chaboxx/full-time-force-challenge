@@ -1,8 +1,7 @@
-import { FC } from 'react';
-import { Props, TableInfo ,commitInfo } from '../components/home/TableInfo';
+import { FC, useEffect } from 'react';
+import { TableInfo ,commitInfo } from '../components/home/TableInfo';
 import { Navbar } from '../components/ui/Navbar';
 // import { Link } from 'react-router-dom';
-
 
 const commitsInformation : commitInfo[] = [{
   commitId: "123",
@@ -12,6 +11,11 @@ const commitsInformation : commitInfo[] = [{
   date: "sdsd",
 }]
 export const HomeScreen : FC = () => {
+  useEffect(() => {
+    alert(import.meta.env.VITE_APP_URL_SERVER);
+  }, [])
+  
+  
   return (
     <main>
       <Navbar/>

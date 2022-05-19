@@ -1,16 +1,18 @@
 
 import axios from "axios";
 
-axios.create({
-  baseURL: process.env.URL_SERVER,
+const api = axios.create({
+  baseURL: import.meta.env.VITE_APP_URL_SERVER,
 })
 
 export const useApi = () =>{
 
+  
+  const getCommitData = async ( urlRepo : string) =>{
 
-  const getCommitData = ( urlRepo : string) =>{
+    const resp = await api.get("/get-commit-data");
 
-    axios.get()
+    console.log({resp});
 
   }
 

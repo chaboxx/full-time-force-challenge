@@ -1,8 +1,8 @@
-import { config } from "dotenv";
+
 
 import { MainRoutes } from "./routes/MainRoutes";
 
-config();
+
 function App() {
 
   return (
