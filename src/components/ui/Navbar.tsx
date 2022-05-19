@@ -1,11 +1,13 @@
 import { FC } from "react";
+import { FiGithub } from "react-icons/fi";
 
 export const Navbar : FC = () => {
   return (
     <nav>
-      <ul>
-        <li>Menu</li>
-      </ul>
+      <div>
+          <h1>GIT COMMITS APP</h1>
+          <FiGithub/>
+      </div>
     </nav>
   )
 }
