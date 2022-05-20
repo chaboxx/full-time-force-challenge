@@ -1,6 +1,7 @@
-import { FC, useEffect } from 'react';
+import { FC, useState } from 'react';
 import { TableInfo ,commitInfo } from '../components/home/TableInfo';
 import { Navbar } from '../components/ui/Navbar';
+import { useApi } from '../hooks/useApi';
 // import { Link } from 'react-router-dom';
 
 const commitsInformation : commitInfo[] = [{
@@ -10,17 +11,21 @@ const commitsInformation : commitInfo[] = [{
   emailCommiter:"sdsd",
   date: "sdsd",
 }]
+
+
 export const HomeScreen : FC = () => {
-  useEffect(() => {
-    alert(import.meta.env.VITE_APP_URL_SERVER);
-  }, [])
   
+
+  const [commitsInformationData, setCommitsInformationData] = useState([]);
+
+  const { getCommitData } = useApi();
   
+
   return (
-    <main>
+    <>
       <Navbar/>
-      <section>
-        <div>
+      <main className="home_screen_container">
+        <div className="home_screen_conten_container">
           <div>
 
             <button>Default {"(This Proyect)"}</button>
@@ -34,7 +39,7 @@ export const HomeScreen : FC = () => {
         
         <TableInfo commitsInformation={commitsInformation}/>
 
-      </section>
-    </main>
+      </main>
+    </>
   )
 }

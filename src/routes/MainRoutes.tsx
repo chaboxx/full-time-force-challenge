@@ -5,7 +5,6 @@ import { CommitsScreen } from "../pages/CommitsScreen";
 
 import { HomeScreen } from "../pages/HomeScreen";
 
-
 export const MainRoutes : FC = () => {
   return (
     <BrowserRouter>

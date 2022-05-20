@@ -16,4 +16,7 @@ export const useApi = () =>{
 
   }
 
+  return {
+    getCommitData,
+  }
 }

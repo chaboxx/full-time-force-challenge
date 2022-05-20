@@ -1,0 +1,23 @@
+.navbar_container{
+  display: grid;
+  justify-items: center;
+}
+
+.navbar_content_container{
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  align-items: center;
+  gap: 15px;
+  
+}
+
+.navbar_title{
+  font-size: 25px;
+  font-family: "Nunito";
+  font-weight: 700;
+}
+
+.navbar_icon{
+  width: 30px;
+  height: 30px;
+}

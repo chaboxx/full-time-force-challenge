@@ -2,6 +2,7 @@
 
 import { MainRoutes } from "./routes/MainRoutes";
 
+import "./styles/index.css";
 
 function App() {
 
