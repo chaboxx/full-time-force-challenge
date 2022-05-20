@@ -1,0 +1,24 @@
+.footer_container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  width: 95%;
+  align-items: center;
+  height: 30px;
+  padding: 0 2.5%;
+}
+
+.footer_title{
+  font-size: 14px;
+  font-family: "Nunito";
+  color: #6e707f;
+}
+.page_owner{
+  font-size: 14px;
+  font-family: "Nunito";
+  justify-self: end;
+  font-weight: 700;
+  color: #666777;
+}

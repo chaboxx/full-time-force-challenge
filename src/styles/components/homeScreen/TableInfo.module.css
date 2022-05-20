@@ -1,0 +1,146 @@
+
+.table_info_table{
+  width: 93%;
+  margin: 0 auto;
+  /* border-bottom: 1px solid black; */
+  /* border: 1px solid rgba(0, 0, 0, 0.2); */
+  border-radius: 5px;
+  background-color: white;
+}
+
+.table_info_thead{
+  background-color: #e7f7ff;
+
+}
+.table_info_tr_head{
+  height: 40px;
+}
+
+/* WIDTH HEADS */
+.table_info_th_15{
+  width: 15%;
+  color: #515365;
+  font-size: 16px;
+  font-family: "Nunito";
+
+}
+.table_info_th_20{
+  width: 20%;
+  color: #515365;
+  font-size: 16px;
+  font-family: "Nunito";
+}
+
+.table_info_th_10{
+  width: 10%;
+  color: #515365;
+  font-size: 16px;
+  font-family: "Nunito";
+}
+
+/* WIDTH BODYS */
+.table_info_td_15{
+  width: 15%;
+  padding: 0 15px;
+  font-size: 14px;
+  font-family: "Nunito";
+  font-weight: 600;
+}
+.table_info_td_20{
+  width: 20%;
+  padding: 0 15px;
+  font-size: 14px;
+  font-family: "Nunito";
+  font-weight: 600;
+
+}
+
+.table_info_td_10{
+  width: 10%;
+  padding: 0 15px;
+  font-size: 14px;
+  font-family: "Nunito";
+  font-weight: 600;
+
+}
+
+.table_info_tr_body{
+  height: 50px;
+  border: 1px solid #4361ee;
+}
+
+.table_info_pagination_container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-top: 25px;
+  padding: 0 3%;
+}
+.pagination_info{
+  justify-self: end;
+  display: grid;
+  grid-template-columns: 1fr 1.8fr 1fr;
+  width: 150px;
+}
+.page_container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+.table_info_actual_page{
+  width: 150px;
+  border: 1px solid #e0e6ed;
+  border-radius: 5px;
+  height: 35px;
+  color: #788ef3;
+  display: grid;
+  place-items: center;
+  font-family: "Nunito";
+  font-size: 14px;
+}
+.left_icon_container{
+  display: grid;
+  place-items: center;
+  height: 32px;
+  width: 32px;
+  background-color: #f1f2f3;
+  border-radius: 50%;
+}
+.left_icon_container svg{
+  color: #888ea8;
+}
+.rigth_icon_container{
+  display: grid;
+  place-items: center;
+  height: 32px;
+  width: 32px;
+  background-color: #f1f2f3;
+  border-radius: 50%;
+}
+.rigth_icon_container svg{
+  color: #888ea8;
+}
+.label_actual_page{
+  display: grid;
+  place-items: center;
+  height: 32px;
+  width: 32px;
+  background-color: #4361ee;
+  border-radius: 50%;
+  color: #e7ebfd;
+  font-size: 15px;
+  font-family: "Nunito";
+}
+
+
+.label_page{
+  display: grid;
+  place-items: center;
+  height: 32px;
+  width: 32px;
+  background-color: #ebecef;
+  border-radius: 50%;
+  color: #888ea8;
+  font-size: 15px;
+  font-family: "Nunito";
+}

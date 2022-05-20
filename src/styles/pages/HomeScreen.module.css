@@ -1,0 +1,74 @@
+.home_screen_container{
+  height: calc(100vh - 30px);
+  position: relative;
+  background-color: #f1f2f3;
+  padding-top: 25px;
+}
+
+.home_screen_content_container{
+  display: grid;
+  margin-top: 30px;
+  background-color: white;
+  margin: 0 3%;
+  padding: 30px 0;
+  border-radius: 5px;
+}
+
+.home_screen_buttons_container{
+  display: flex;
+  flex-direction: row; 
+  margin-top: 25px;
+  margin-bottom: 25px;
+  justify-items: center;
+  margin: 0 5%;
+  margin-bottom: 30px;
+  height: 40px;
+}
+.home_screen_search_container{
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  max-width: 500px;
+}
+
+.home_screen_button_default_container{
+  
+}
+.home_screen_button_default{
+  background-color: #4361ee;
+  color: white;
+  font-family: "Nunito";
+  font-weight: 400;
+  font-size: 15px;
+  width: 173px;
+  height: 40px;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 10px 20px -10px #4361ee;
+}
+.home_screen_input_search{
+  padding: 0 12px;
+  height: 38px;
+  border: 1px solid #e7ebf0;
+  border-right: 0;
+  border-radius: 3px 0 0 3px;
+  color: #696c82;
+}
+.home_screen_input_search:focus{
+  outline: none;
+}
+.home_screen_input_search::placeholder{
+  color: #bfc9d4;
+}
+
+.home_screen_search_button{
+  background-color: #4361ee;
+
+  color: white;
+  font-family: "Nunito";
+  font-weight: 400;
+  font-size: 15px;
+  height: 40px;
+  border: none;
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 10px 20px -10px #4361ee;
+}

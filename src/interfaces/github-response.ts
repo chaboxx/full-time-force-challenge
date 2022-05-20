@@ -1,3 +1,7 @@
+export interface GetCommitData{
+  data: GitHubCommit[];
+} 
+
 export interface GitHubCommit {
   sha:          string;
   node_id:      string;

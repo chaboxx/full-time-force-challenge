@@ -1,6 +1,7 @@
 .navbar_container{
   display: grid;
   justify-items: center;
+  margin-bottom: 20px;
 }
 
 .navbar_content_container{

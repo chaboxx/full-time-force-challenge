@@ -1,45 +1,61 @@
-import { FC, useState } from 'react';
-import { TableInfo ,commitInfo } from '../components/home/TableInfo';
+import { url } from 'inspector';
+import { FC, useEffect, useState } from 'react';
+import { TableInfo } from '../components/homeScreen/TableInfo';
+import { Footer } from '../components/ui/Footer';
 import { Navbar } from '../components/ui/Navbar';
 import { useApi } from '../hooks/useApi';
+import { GetCommitData, GitHubCommit } from '../interfaces/github-response';
+
 // import { Link } from 'react-router-dom';
 
-const commitsInformation : commitInfo[] = [{
-  commitId: "123",
-  commitMessage: "12321",
-  owner:"yo",
-  emailCommiter:"sdsd",
-  date: "sdsd",
-}]
 
+import styles from "../styles/pages/HomeScreen.module.css";
 
 export const HomeScreen : FC = () => {
+
+  const [commitsInformationData, setCommitsInformationData] = useState<GitHubCommit[]>();
   
-
-  const [commitsInformationData, setCommitsInformationData] = useState([]);
-
   const { getCommitData } = useApi();
   
+  const [checking, setChecking] = useState(true);
+  
+  useEffect(() => {
+    getCommitData().then(data=>{
+      if ( !data ){
+        alert("Error in the api , reload the page please.");
+        return;
+      }
+      setCommitsInformationData(data.data);
+      setChecking(false);
+    });
+  }, [])
+  
+  if (checking){
+    return <h1>Cargando....</h1>;
+  }
 
   return (
-    <>
+    <div className={styles.home_screen_container}>
       <Navbar/>
-      <main className="home_screen_container">
-        <div className="home_screen_conten_container">
-          <div>
+      <main className={styles.home_screen_content_container}>
+        <div className={styles.home_screen_buttons_container}>
+          <div className={styles.home_screen_button_default_container}>
 
-            <button>Default {"(This Proyect)"}</button>
+            <button className={styles.home_screen_button_default}>Default {"(This Proyect)"}</button>
           </div>
-          <div>
-            <input type="text"/>
-            <button>Search Commits by Url</button>
+          <div style={{flex:"1"}}></div>
+          <div className={styles.home_screen_search_container}>
+            <input className={styles.home_screen_input_search} placeholder="Search..." type="text"/>
+            <button className={styles.home_screen_search_button}>Search Commits by Url</button>
           </div>
         </div>
 
         
-        <TableInfo commitsInformation={commitsInformation}/>
+        <TableInfo data={commitsInformationData!}/>
 
       </main>
-    </>
+
+      <Footer/>
+    </div>
   )
 }
