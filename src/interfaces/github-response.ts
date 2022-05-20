@@ -1,5 +1,8 @@
 export interface GetCommitData{
+  ok : boolean;
+  msg: string;
   data: GitHubCommit[];
+  dataLength : number;
 } 
 
 export interface GitHubCommit {

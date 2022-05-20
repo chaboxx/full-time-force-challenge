@@ -13,7 +13,7 @@
 
 }
 .table_info_tr_head{
-  height: 40px;
+  height: 45px;
 }
 
 /* WIDTH HEADS */
@@ -54,33 +54,63 @@
   font-weight: 600;
 
 }
-
+.table_info_td_20_email_commiter{
+  width: 20%;
+  padding: 0 15px;
+}
+.table_info_td_15_date{
+  width: 15%;
+  padding: 0 10px;
+}
+.table_info_td_15_date p{
+  font-size: 12px;
+  font-family: "Nunito";
+  font-weight: 600;
+  display: grid;
+  align-items: center;
+}
 .table_info_td_10{
   width: 10%;
-  padding: 0 15px;
+  padding: 0 10px;
+ 
+
+}
+.table_info_td_10 a {
+  font-size: 13px;
+  font-family: "Nunito";
+  font-weight: 600;
+}
+.table_td_container{
+  display: grid;
+  align-items: center;
+}
+.table_info_tr_body{
+  height: 60px;
+  border: 1px solid #4361ee;
+}
+.email_commiter_container{
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  align-items: center;
+  gap: 7px;
+}
+.email_anchor{
   font-size: 14px;
   font-family: "Nunito";
   font-weight: 600;
+  text-decoration: none;
+  vertical-align: middle;
 
 }
-
-.table_info_tr_body{
-  height: 50px;
-  border: 1px solid #4361ee;
-}
-
-.table_info_pagination_container{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  margin-top: 25px;
-  padding: 0 3%;
+.image_commiter{
+  width: 30px;
+  height: 30px;
 }
 .pagination_info{
   justify-self: end;
   display: grid;
   grid-template-columns: 1fr 1.8fr 1fr;
-  width: 150px;
+  width: 80%;
 }
 .page_container{
   display: grid;
