@@ -22,7 +22,6 @@ export const useApi = () =>{
       return;
     }
 
-
   }
 
   return {
