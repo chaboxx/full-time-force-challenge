@@ -106,61 +106,6 @@
   width: 30px;
   height: 30px;
 }
-.pagination_info{
-  justify-self: end;
-  display: grid;
-  grid-template-columns: 1fr 1.8fr 1fr;
-  width: 80%;
-}
-.page_container{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-}
-.table_info_actual_page{
-  width: 150px;
-  border: 1px solid #e0e6ed;
-  border-radius: 5px;
-  height: 35px;
-  color: #788ef3;
-  display: grid;
-  place-items: center;
-  font-family: "Nunito";
-  font-size: 14px;
-}
-.left_icon_container{
-  display: grid;
-  place-items: center;
-  height: 32px;
-  width: 32px;
-  background-color: #f1f2f3;
-  border-radius: 50%;
-}
-.left_icon_container svg{
-  color: #888ea8;
-}
-.rigth_icon_container{
-  display: grid;
-  place-items: center;
-  height: 32px;
-  width: 32px;
-  background-color: #f1f2f3;
-  border-radius: 50%;
-}
-.rigth_icon_container svg{
-  color: #888ea8;
-}
-.label_actual_page{
-  display: grid;
-  place-items: center;
-  height: 32px;
-  width: 32px;
-  background-color: #4361ee;
-  border-radius: 50%;
-  color: #e7ebfd;
-  font-size: 15px;
-  font-family: "Nunito";
-}
 
 
 .label_page{

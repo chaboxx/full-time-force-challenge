@@ -72,3 +72,76 @@
   border-radius: 0 3px 3px 0;
   box-shadow: 0 10px 20px -10px #4361ee;
 }
+
+.table_info_pagination_container{
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  margin-top: 25px;
+  padding: 0 3%;
+
+}
+
+.table_info_actual_page{
+
+  border: 1px solid #e0e6ed;
+  border-radius: 5px;
+  height: 35px;
+  color: #788ef3;
+  display: grid;
+  place-items: center;
+  font-family: "Nunito";
+  font-size: 14px;
+}
+
+.pagination_info{
+  justify-self: end;
+  display: grid;
+  grid-template-columns: 1fr 1.8fr 1fr;
+  width: 60%;
+  max-width: 250px;
+  justify-self: end;
+
+}
+
+.left_icon_container{
+  display: grid;
+  place-items: center;
+  height: 32px;
+  width: 32px;
+  background-color: #f1f2f3;
+  border-radius: 50%;
+}
+.left_icon_container svg{
+  color: #888ea8;
+}
+
+.page_container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+.label_actual_page{
+  display: grid;
+  place-items: center;
+  height: 32px;
+  width: 32px;
+  background-color: #4361ee;
+  border-radius: 50%;
+  color: #e7ebfd;
+  font-size: 15px;
+  font-family: "Nunito";
+}
+
+.rigth_icon_container{
+  display: grid;
+  place-items: center;
+  height: 32px;
+  width: 32px;
+  background-color: #f1f2f3;
+  border-radius: 50%;
+}
+.rigth_icon_container svg{
+  color: #888ea8;
+}

@@ -2,10 +2,6 @@ import { FC } from 'react';
 
 import { nanoid } from 'nanoid';
 
-import { AiFillCaretLeft ,AiFillCaretRight } from "react-icons/ai";
-
-
-
 import styles from "../../styles/components/homeScreen/TableInfo.module.css";
 
 import { GitHubCommit } from '../../interfaces/github-response';
@@ -34,7 +30,7 @@ export const TableInfo : FC<Props> = ({ data : commitsInformation , dataLength ,
         <tbody>
           {
             commitsInformation.map(commit=>(
-              <tr className={styles.table_info_tr_body}>
+              <tr key={nanoid()} className={styles.table_info_tr_body}>
                 <td className={styles.table_info_td_15}>
                   <div className={styles.table_td_container}>
 

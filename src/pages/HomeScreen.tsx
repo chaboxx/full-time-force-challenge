@@ -89,7 +89,13 @@ export const HomeScreen : FC = () => {
             <p>Showing page { actualPage } of { Math.floor(dataLength/6) }</p>
           </div>
           <div className={styles.pagination_info}>
-            <div className={styles.left_icon_container}>
+            <div onClick={(e)=>{
+              if ( auxCommitsInformationData!.length===0 ){
+                setdataLength(dataLength=>dataLength > 1 ? dataLength-1 : dataLength );
+              }else{
+                setAuxDataLength(auxDataLength=>auxDataLength > 1 ? auxDataLength-1 : auxDataLength);
+              }
+            }} className={[styles.left_icon_container , "pointer"].join(" ")}>
               <AiFillCaretLeft/>
             </div>
             <div className={styles.page_container}>
@@ -102,7 +108,13 @@ export const HomeScreen : FC = () => {
               ))
             }
             </div>
-            <div className={styles.rigth_icon_container}>
+            <div onClick={(e)=>{
+              if ( auxCommitsInformationData!.length===0 ){
+                setdataLength(dataLength=>dataLength < Math.floor(dataLength/6) ? dataLength + 1 : dataLength );
+              }else{
+                setAuxDataLength(auxDataLength=>auxDataLength < Math.floor(auxDataLength/6) ? auxDataLength + 1 : auxDataLength);
+              }
+            }} className={[styles.rigth_icon_container, "pointer"].join(" ")}>
               <AiFillCaretRight/>
 
             </div>
