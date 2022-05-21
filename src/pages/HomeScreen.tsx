@@ -132,19 +132,22 @@ export const HomeScreen : FC = () => {
             <div className={styles.page_container}>
 
             {
-              new Array(Math.ceil(auxCommitsInformationData!.length===0 ? dataLength/6 : auxDataLength/6)).fill("").map((arr,index)=>(
-                <p onClick={(e)=>{
+              new Array(Math.ceil(auxCommitsInformationData!.length===0 ? dataLength/6 : auxDataLength/6)).fill("").map((arr,index)=>{
+
+                return <p onClick={(e)=>{
+                  e.preventDefault();
                   setActualPage(index+1);
+                  console.log({actualPage});
                   if(actualPage !==index+1){
-                    handleGetMoreRepoData();
+                    // handleGetMoreRepoData();
                   }
                 }}
-                  key={nanoid()}
-                  className={[ actualPage ===index+1 ?  styles.label_actual_page : styles.label_page , "hover"].join(" ")}
+                key={nanoid()}
+                className={[ actualPage ===index+1 ?  styles.label_actual_page : styles.label_page , "hover"].join(" ")}
                 >
                   {index+1}
                 </p> 
-              ))
+              })
             }
             </div>
             <div onClick={(e)=>{

@@ -15,7 +15,7 @@ export const useApi = () =>{
   const getCommitData = async ( page : number = 1 , url? : string ) =>{
     
     try {
-      const resp = await api.get<GetCommitData>(`/?page=${page}&linkGitHubRepo=${url ? url : ""}`);
+      const resp = await api.get<GetCommitData>(`/get-data?page=${page}&linkGitHubRepo=${url ? url : ""}`);
       return resp.data;
       
     } catch (error) {
