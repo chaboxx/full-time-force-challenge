@@ -1,21 +1,17 @@
-import axios from "axios";
+
+import { api } from "../utils/axios";
+
 
 import { GetCommitData } from "../interfaces/github-response";
 
-const api = axios.create({
-  baseURL : import.meta.env.VITE_APP_URL_SERVER,
-  headers : {
-    "Content-Type" : "application/json",
-  }
-})
 
-export const useApi = () =>{
+export const useApi = ( path: string ) =>{
 
-  
+
   const getCommitData = async ( page : number = 1 , url? : string ) =>{
     
     try {
-      const resp = await api.get<GetCommitData>(`/get-data?page=${page}&linkGitHubRepo=${url ? url : ""}`);
+      const resp = await api.get<GetCommitData>(`${path}?page=${page}&linkGitHubRepo=${url ? url : ""}&user=chaboxx&password=Cpython++;rgrc1944&access_token=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`);
       return resp.data;
       
     } catch (error) {

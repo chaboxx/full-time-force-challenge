@@ -8,11 +8,9 @@ import { GitHubCommit } from '../../interfaces/github-response';
 
 interface Props{
   data : GitHubCommit[],
-  dataLength : number;
-  actualPage : number;
 }
 
-export const TableInfo : FC<Props> = ({ data : commitsInformation , dataLength , actualPage}) => {
+export const TableInfo : FC<Props> = ({ data : commitsInformation}) => {
   return (
     <>
       <table className={styles.table_info_table}>
