@@ -11,6 +11,8 @@ export const usePagination = () => {
   const [numberOfPages, setNumberOfPages] = useState<number>(0);
   const [commitsInformationData, setCommitsInformationData] = useState<GitHubCommit[]>([]);
   const [checking, setChecking] = useState(true);
+  const [urlRepo, setUrlRepo] = useState("");
+
 
   useEffect(() => {
     api.get<GetCommitData>(`/get-data?page=${1}`)
@@ -24,12 +26,30 @@ export const usePagination = () => {
       })
 
   }, [])
-  
+
+  useEffect(() => {
+    handleDataCommit();
+  }, [currentPage])
 
   const handleDataCommitDefault = async () =>{
     setChecking(true);
 
-    const resp = await api.get<GetCommitData>(`/get-data?page=${currentPage}`)
+    const resp = await api.get<GetCommitData>(`/get-data?page=${1}`)
+    setCommitsInformationData(resp.data.data);
+    setNumberOfPages(Math.ceil(resp.data.dataLength/6));
+    setCurrentPage(1);
+    setUrlRepo("");
+
+    
+    setChecking(false);
+
+  }
+
+  const handleDataCommit = async () =>{
+    setChecking(true);
+    
+    console.log({currentPage,urlRepo});
+    const resp = await api.get<GetCommitData>(`/get-data?page=${currentPage}&linkGitHubRepo=${urlRepo}`)
     setCommitsInformationData(resp.data.data);
 
     setChecking(false);
@@ -43,7 +63,8 @@ export const usePagination = () => {
       return;
     }
     setChecking(true);
-
+    
+    setUrlRepo(url);
     setCurrentPage(1);
     const resp = await api.get<GetCommitData>(`/get-data?page=${1}&linkGitHubRepo=${url}`)
     setCommitsInformationData(resp.data.data);
@@ -56,13 +77,14 @@ export const usePagination = () => {
   
   //CURRENT PAGE 1 - NUMBER OF PAGES
   const changeCurrentPage = ( option : "add" | "subtract" | "value", value? : number ) =>{
-    console.log({numberOfPages});
+    console.log({option,currentPage,numberOfPages,value});
     switch (option) {
       case "add":
         if ( currentPage < numberOfPages ){
+
+          setCurrentPage(currentPage=>currentPage+1);
+         
           
-          console.log({add : currentPage});
-          setCurrentPage(currentPage+1);
         }
         break;
         
@@ -70,17 +92,20 @@ export const usePagination = () => {
         
         if ( currentPage > 2){
           
-          console.log({s : currentPage});
-          setCurrentPage(currentPage-1);
+          
+          setCurrentPage(currentPage=>currentPage-1);
+         
           
         }
         break;
         
       case "value":
         
-        if ( value  && value <= numberOfPages && value > 0 ){
-          console.log({v : currentPage});
-          setCurrentPage(value);
+        if ( !!value  && value <= numberOfPages && value > 0 ){
+          console.log("first");
+          setCurrentPage(currentPage=>value);
+      
+          
         }
         break;
           

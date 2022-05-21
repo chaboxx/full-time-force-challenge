@@ -35,8 +35,6 @@ export const HomeScreen : FC = () => {
   const [ urlRepo, setUrlRepo ] = useState("");
   
 
-  
-
   if (checking){
     return <Loading show={checking}/>;
   }
@@ -74,7 +72,7 @@ export const HomeScreen : FC = () => {
             <div className={styles.page_container}>
 
             {
-              new Array(numberOfPages).fill("").map((arr,index)=>(
+              new Array(numberOfPages).fill("").map((_,index)=>(
                 <p 
                   onClick={(e)=>changeCurrentPage("value",index+1)}
                   key={nanoid()}
