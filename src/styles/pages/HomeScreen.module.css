@@ -98,7 +98,7 @@
   justify-self: end;
   display: grid;
   grid-template-columns: 1fr 1.8fr 1fr;
-  width: 60%;
+  width: 100%;
   max-width: 350px;
   justify-self: end;
 
@@ -118,7 +118,8 @@
 
 .page_container{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(5,1fr);
+  gap: 10px;
 
 }
 
