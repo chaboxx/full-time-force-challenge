@@ -1,23 +1,16 @@
-import { FC, useEffect, useState } from 'react';
-
-import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
+import { FC , useState } from 'react';
 import { nanoid } from 'nanoid';
 
-import { Navbar } from '../components/ui/Navbar';
-import { Footer } from '../components/ui/Footer';
+import { AiFillCaretLeft, AiFillCaretRight } from 'react-icons/ai';
 
 import { TableInfo } from '../components/homeScreen/TableInfo';
-
-import { useApi } from '../hooks/useApi';
-
-import styles from "../styles/pages/HomeScreen.module.css";
-
-
-import { GitHubCommit } from '../interfaces/github-response';
-import { usePagination } from '../hooks/usePagination';
+import { Navbar } from '../components/ui/Navbar';
+import { Footer } from '../components/ui/Footer';
 import { Loading } from '../components/ui/Loading';
 
+import { usePagination } from '../hooks/usePagination';
 
+import styles from "../styles/pages/HomeScreen.module.css";
 
 export const HomeScreen : FC = () => {
   

@@ -47,13 +47,11 @@ export const usePagination = () => {
 
   const handleDataCommit = async () =>{
     setChecking(true);
-    
-    console.log({currentPage,urlRepo});
+  
     const resp = await api.get<GetCommitData>(`/get-data?page=${currentPage}&linkGitHubRepo=${urlRepo}`)
     setCommitsInformationData(resp.data.data);
 
     setChecking(false);
-    
 
   }
 
@@ -65,11 +63,11 @@ export const usePagination = () => {
     setChecking(true);
     
     setUrlRepo(url);
-    setCurrentPage(1);
     const resp = await api.get<GetCommitData>(`/get-data?page=${1}&linkGitHubRepo=${url}`)
     setCommitsInformationData(resp.data.data);
     setNumberOfPages(Math.ceil(resp.data.dataLength/6));
-
+    setCurrentPage(1);
+    
     setChecking(false);
 
   }
@@ -81,28 +79,22 @@ export const usePagination = () => {
     switch (option) {
       case "add":
         if ( currentPage < numberOfPages ){
-
           setCurrentPage(currentPage=>currentPage+1);
-         
-          
         }
         break;
         
       case "subtract":
         
         if ( currentPage > 2){
-          
-          
           setCurrentPage(currentPage=>currentPage-1);
-         
-          
+
         }
         break;
         
       case "value":
         
         if ( !!value  && value <= numberOfPages && value > 0 ){
-          console.log("first");
+      
           setCurrentPage(currentPage=>value);
       
           
