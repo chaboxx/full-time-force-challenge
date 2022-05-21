@@ -101,7 +101,7 @@
   width: 100%;
   max-width: 350px;
   justify-self: end;
-
+  justify-items: center;
 }
 
 .left_icon_container{
